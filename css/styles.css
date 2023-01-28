@@ -1,0 +1,8 @@
+.testimony .card {
+  color: white;
+  background-color: hsl(300deg, 43%, 22%);
+}
+
+.starts {
+  margin-bottom: var(--bs-card-title-spacer-y);
+}/*# sourceMappingURL=styles.css.map */
