@@ -1,8 +1,32 @@
-.testimony .card {
-  color: white;
-  background-color: hsl(300deg, 43%, 22%);
+body {
+  font-family: "League Spartan", sans-serif;
+  color: hsl(300deg, 43%, 22%);
+  overflow: hidden;
 }
 
-.starts {
-  margin-bottom: var(--bs-card-title-spacer-y);
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  letter-spacing: -1.5px;
+}
+
+main {
+  margin: 0 0.75rem;
+}
+
+.wrap.hero {
+  max-width: 412px;
+}
+.wrap.hero p {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.ratings {
+  border: 2px solid red;
+  padding: 0.875rem 1rem;
+  background-color: hsl(300deg, 24%, 96%);
+  border-radius: 0.375rem;
+  max-width: 445px;
 }/*# sourceMappingURL=styles.css.map */

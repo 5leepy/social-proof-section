@@ -1,10 +1,47 @@
-.testimony {
-    .card{
-        color: white;
-        background-color: hsl(300, 43%, 22%);
+// ### Primary
+
+// Very Dark Magenta: hsl(300, 43%, 22%)
+// Soft Pink: hsl(333, 80%, 67%)
+
+// ### Neutral
+
+// Dark Grayish Magenta: hsl(303, 10%, 53%)
+// Light Grayish Magenta: hsl(300, 24%, 96%)
+// White: hsl(0, 0%, 100%)
+
+$clr-primary-900:hsl(300, 43%, 22%);
+$clr-primary-700:hsl(333, 80%, 67%);
+$clr-neutral-500:hsl(303, 10%, 53%);
+$clr-neutral-300:hsl(300, 24%, 96%);
+$clr-neutral-100:hsl(0, 0%, 100%);
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    color: $clr-primary-900;
+    overflow: hidden;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: -1.5px;
+}
+main {
+    margin: 0 .75rem;
+}
+.wrap.hero {
+    max-width: 412px;
+    p {
+        font-weight: 500;
+        font-size: 18px;
     }
 }
 
-.starts {
-    margin-bottom:  var(--bs-card-title-spacer-y);
+
+.ratings {
+    border: 2px solid red;
+    padding: .875rem 1rem;
+    background-color: $clr-neutral-300;
+    border-radius: .375rem;
+    max-width: 445px;
 }
