@@ -83,14 +83,27 @@ body {
   font-family: "League Spartan", sans-serif;
   color: $clr-primary-900;
   background-color: $clr-neutral-100;
+  background-image: url(../images/bg-pattern-top-mobile.svg),
+  url(../images/bg-pattern-bottom-mobile.svg);
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+  @media (min-width: 600px) {
+      background-image: url(../images/bg-pattern-top-desktop.svg),
+      url(../images/bg-pattern-bottom-desktop.svg);
+      background-position: top left, bottom right;
+  }
 }
+
+  
 
 main {
   padding: 0 1.5rem;
-  background-image: url(../images/bg-pattern-bottom-mobile.svg);
   @media (min-width: 600px) {
     padding: 0 10.3125rem;
-    background-image: url(../images/bg-pattern-bottom-desktop.svg);
+  }
+  @media (min-width: 1440px) {
+    display: grid;
+    place-content: center;
   }
 }
 
