@@ -9,39 +9,242 @@
 // Light Grayish Magenta: hsl(300, 24%, 96%)
 // White: hsl(0, 0%, 100%)
 
-$clr-primary-900:hsl(300, 43%, 22%);
-$clr-primary-700:hsl(333, 80%, 67%);
-$clr-neutral-500:hsl(303, 10%, 53%);
-$clr-neutral-300:hsl(300, 24%, 96%);
-$clr-neutral-100:hsl(0, 0%, 100%);
+$clr-primary-900: hsl(300, 43%, 22%);
+$clr-primary-700: hsl(333, 80%, 67%);
+$clr-neutral-500: hsl(303, 10%, 53%);
+$clr-neutral-300: hsl(300, 24%, 96%);
+$clr-neutral-100: hsl(0, 0%, 100%);
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 body {
-    font-family: 'League Spartan', sans-serif;
-    color: $clr-primary-900;
-    overflow: hidden;
+  font-family: "League Spartan", sans-serif;
+  color: $clr-primary-900;
+  background-color: $clr-neutral-100;
 }
-h1 {
+
+main {
+  padding: 0 1.5rem;
+  background-image: url(../images/bg-pattern-bottom-mobile.svg);
+  @media (min-width: 600px) {
+    padding: 0 10.3125rem;
+    background-image: url(../images/bg-pattern-bottom-desktop.svg);
+  }
+}
+
+.container-hero {
+  padding-top: 4rem;
+  margin-bottom: 3.125rem;
+  @media (min-width: 600px) {
+    padding-top: 6.25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 4.375rem;
+  }
+}
+
+.hero {
+  text-align: center;
+  h1 {
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 2rem;
     letter-spacing: -1.5px;
-}
-main {
-    margin: 0 .75rem;
-}
-.wrap.hero {
-    max-width: 412px;
-    p {
-        font-weight: 500;
-        font-size: 18px;
+    margin-top: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+  p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $clr-neutral-500;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.25px;
+    line-height: 1.5625rem;
+  }
+  @media (min-width: 600px) {
+    text-align: start;
+    max-width: 415px;
+    h1 {
+      font-size: 3.5rem;
+      line-height: 3rem;
+      letter-spacing: -1.8px;
+      margin-bottom: 1.5rem;
+      margin-bottom: 1.625rem;
     }
+    p {
+      margin-bottom: 0;
+      letter-spacing: -0.2px;
+    }
+  }
 }
-
 
 .ratings {
-    border: 2px solid red;
-    padding: .875rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9375rem;
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $clr-primary-900;
     background-color: $clr-neutral-300;
-    border-radius: .375rem;
     max-width: 445px;
+    padding: 0.9375rem 2rem;
+    gap: 0.9375rem;
+    border-radius: 0.75rem;
+    .stars {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h2 {
+      font-size: 1rem;
+      line-height: 1.125rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+  }
+  @media (min-width: 600px) {
+    padding-top: 1.75rem;
+    .reviews {
+      flex-direction: row;
+      gap: 2.125rem;
+      padding: 1.1875rem 2rem;
+      min-width: 445px;
+      border-radius: 0.5rem;
+      &.start {
+        margin-left: .875rem;
+      }
+      &.center {
+        margin-left: 4rem;
+      }
+      &.end {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.container-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    gap: 1.875rem;
+    height: 266px;
+  }
+}
+.card {
+  background-color: $clr-primary-900;
+  color: $clr-neutral-100;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  max-height: 250px;
+  &-body {
+    padding: 2.5rem 2rem;
+  }
+  &-profile {
+    display: flex;
+    overflow: hidden;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    img {
+      max-height: 2.5rem;
+      border-radius: 50%;
+    }
+    &-name {
+      h2 {
+        font-weight: 700;
+        line-height: 1rem;
+        margin-top: 0.2rem;
+        letter-spacing: 0.5px;
+      }
+      span {
+        letter-spacing: 0.3px;
+        color: $clr-primary-700;
+        font-weight: 500;
+      }
+    }
+  }
+  &-text {
+    letter-spacing: 0.3px;
+    line-height: 1.375rem;
+  }
+  @media (min-width: 600px) {
+    max-height: 234px;
+    max-width: 350px;
+    &-text {
+      line-height: 1.4rem;
+    }
+    &.center {
+      margin: auto 0;
+    }
+    &.end {
+      margin-top: auto;
+    }
+  }
 }
